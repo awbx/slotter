@@ -23,11 +23,7 @@ class Slotter:
         return True
 
     def take_slots(self, duration=30):
-        start = datetime.datetime.now()
-        if start.minute < 30:
-            start += datetime.timedelta(minutes=15)
-        else:
-            start += datetime.timedelta(minutes=60)
+        start = datetime.datetime.now() + datetime.timedelta(minutes=60)
         while True:
             data = {
                 "slot[begin_at]": start.strftime("%Y-%m-%dT%H:%M:%S"),
