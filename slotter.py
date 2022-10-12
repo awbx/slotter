@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from requests import session
 import datetime
 
-ENDPOINT = "https://profile.intra.42.fr"
+BASE_URL = "https://profile.intra.42.fr"
 
 
 class Slotter:
@@ -14,7 +14,7 @@ class Slotter:
         self.sess.cookies.update(
             {"_intra_42_session_production": self.session_id})
         resp = self.sess.get(
-            f"{ENDPOINT}/", allow_redirects=False)
+            f"{BASE_URL}/", allow_redirects=False)
         if resp.is_redirect:
             return False
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -30,7 +30,7 @@ class Slotter:
                 "slot[end_at]": (start + datetime.timedelta(minutes=duration)).strftime("%Y-%m-%dT%H:%M:%S"),
             }
             resp = self.sess.post(
-                f"{ENDPOINT}/slots.json", data=data)
+                f"{BASE_URL}/slots.json", data=data)
             payload = resp.json()
             if payload['message'].startswith('Has') or payload['message'].startswith('No overlapping!'):
                 start += datetime.timedelta(minutes=30)
@@ -45,7 +45,7 @@ class Slotter:
     def delete_slots(self):
         start = datetime.datetime.now()
         end = start + datetime.timedelta(minutes=60 * 24 * 30)
-        resp = self.sess.get(f'{ENDPOINT}/slots.json', params={
+        resp = self.sess.get(f'{BASE_URL}/slots.json', params={
             "start": start.strftime("%Y-%m-%d"),
             "end": end.strftime("%Y-%m-%d")})
         slots = resp.json()
@@ -53,7 +53,7 @@ class Slotter:
             print("There's no slots to delete!")
             return
         for slot in slots:
-            resp = self.sess.post(f"{ENDPOINT}/slots/{slot['id']}.json", data={
+            resp = self.sess.post(f"{BASE_URL}/slots/{slot['id']}.json", data={
                 "ids": slot['ids'],
                 "_method": "delete",
                 "confirm": False
