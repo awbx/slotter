@@ -33,6 +33,7 @@ INTRA_SESSION_ID=YOUR INTRA SESSION ID
 
 - Add User-Agent to act like a browser
 - Add more options(features) to `take-slots` command
+- Add day range feature to `take-slots` command
 
 ## License
 [MIT](./LICENSE.md)
