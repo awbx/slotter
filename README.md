@@ -29,7 +29,7 @@ INTRA_SESSION_ID=YOUR INTRA SESSION ID
 * take slots
   - `python3.9 cli.py take-slots`
 * delete slots
-  - `python3.9 cli.py remove-slots`
+  - `python3.9 cli.py delete-slots`
 
 ## TODO
 
