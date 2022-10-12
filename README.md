@@ -1,6 +1,8 @@
 # Slotter
 This's a slotter CLI, that will fill/remove the available slots.
 
+PS: this is a beta version 
+
 ## installation
 
 ```bash
