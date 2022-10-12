@@ -19,10 +19,10 @@ INTRA_SESSION_ID=YOUR INTRA SESSION ID
 follow the steps in screenshots to get your session id
 
 0 - Step1 -> go to Cookies
-<img src="./step_1.png" alt="Step 1"/>
+<img src="./assets/step_1.png" alt="Step 1"/>
 
 1 - Step2 -> Copy the `_intra_42_session_production` content
-<img src="./step_2.png" alt="Step 2"/>
+<img src="./assets/step_2.png" alt="Step 2"/>
 
 ## TODO
 
