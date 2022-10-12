@@ -35,4 +35,4 @@ INTRA_SESSION_ID=YOUR INTRA SESSION ID
 - Add more options(features) to `take-slots` command
 
 ## License
-MIT
+[MIT](./LICENSE.md)
