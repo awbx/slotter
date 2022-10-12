@@ -8,7 +8,7 @@ This's a slotter CLI, that will fill/remove the available slots.
 make install
 
 # manually install 
-python3 -m pip install -r requirements.txt
+python3.9 -m pip install -r requirements.txt
 ```
 
 ## usage
@@ -25,9 +25,9 @@ INTRA_SESSION_ID=YOUR INTRA SESSION ID
 
 
 * take slots
-  - `python3 cli.py take-slots`
+  - `python3.9 cli.py take-slots`
 * delete slots
-  - `python3 cli.py remove-slots`
+  - `python3.9 cli.py remove-slots`
 
 ## TODO
 
